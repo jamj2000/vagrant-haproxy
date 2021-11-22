@@ -3,9 +3,9 @@
     pkg: 
      - unzip
 - name: download wordpress
-  get_url: url=https://wordpress.org/latest.zip dest=/tmp/latest.zip mode=0640
+  get_url: url=https://wordpress.org/latest.zip dest=/root/latest.zip mode=0640
 - name: unzip wordpress
-  unarchive: src=/tmp/latest.zip dest=/var/www/html copy=no owner=www-data group=www-data mode=0744
+  unarchive: src=/root/latest.zip dest=/var/www/html copy=no owner=www-data group=www-data mode=0744
 
 - name: Copy wordpress.sql
   template: >
