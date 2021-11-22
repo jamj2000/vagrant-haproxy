@@ -1,12 +1,17 @@
-#- hosts: all
+- hosts: all
+  become: true
+  roles:
+   - role: commons
+
+#- hosts: servidor_ha
 #  become: true
 #  roles:
-#   - role: commons
+#   - role: router
 
 - hosts: servidores_web
   become: true
   roles:
-   - role: apache2
+   - role: nginx
 
 - hosts: servidores_web
   become: true

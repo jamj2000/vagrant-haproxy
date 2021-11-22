@@ -1,0 +1,24 @@
+- name: install nginx, php-fpm
+  apt: 
+    pkg:
+    - nginx
+    - php-fpm
+    - php-mysql
+
+- name: Copy info.php
+  copy: >
+    src=info.php
+    dest=/var/www/html/info.php
+    owner=www-data
+    group=www-data
+    mode=0644
+
+- name: Copy virtualhost default
+  copy: >
+    src=default
+    dest=/etc/nginx/sites-available/default
+    owner=root
+    group=root
+    mode=0644
+  notify:
+  - restart nginx
