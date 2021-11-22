@@ -1,0 +1,15 @@
+- name: ensure mariadb is installed
+  apt:
+    pkg:
+      - mariadb-server
+      - python3-mysqldb
+    state: latest
+- name: ensure mariadb binds to internal interface
+  template: >-
+    src=etc/mysql/mariadb.conf.d/50-server.cnf
+    dest=/etc/mysql/mariadb.conf.d/50-server.cnf
+    owner=root
+    group=root
+    mode=644
+  notify:
+      restart mariadb

@@ -1,0 +1,20 @@
+- name: install unzip
+  apt: 
+    pkg: 
+     - unzip
+- name: download wordpress
+  get_url: url=https://wordpress.org/latest.zip dest=/tmp/latest.zip mode=0640
+- name: unzip wordpress
+  unarchive: src=/tmp/latest.zip dest=/var/www/html copy=no owner=www-data group=www-data mode=0744
+
+- name: create database wordpress
+  mysql_db: name={{wordpress_bd}} state=present
+
+- name: create user mysql wordpress
+  mysql_user: name={{wordpress_user}} host={{ item }} password={{wordpress_pass}} priv={{wordpress_bd}}.*:ALL,GRANT
+  with_items:
+    - localhost
+- name: copy wp-config.php
+  template: src=templates/wp-config.j2 dest=/var/www/html/wordpress/wp-config.php owner=www-data group=www-data mode=0744
+  notify: restart apache2
+  

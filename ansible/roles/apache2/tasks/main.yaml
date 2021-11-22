@@ -1,0 +1,12 @@
+- name: install apache2+php5
+  apt: name={{ item }} state=latest
+  with_items:
+    - apache2
+    - php5
+    - php5-mysql
+  notify:
+    - restart apache2
+  
+  - name: copy index.html
+    template: src=templates/index.j2 dest=/var/www/html/index.html owner=www-data group=www-data mode=0644
+

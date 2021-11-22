@@ -1,0 +1,19 @@
+- name: install apache2+php
+  apt: 
+    pkg:
+    - apache2
+    - php7.3
+    - php7.3-mysql
+
+- name: Copy index.html
+  template: src=templates/index.j2 dest=/var/www/html/index.html owner=www-data group=www-data mode=0644
+
+- name: Copy info.php
+  copy: >
+    src=info.php
+    dest=/var/www/html/info.php
+    owner=www-data
+    group=www-data
+    mode=0644
+  notify:
+  - restart apache2

@@ -1,0 +1,19 @@
+#- hosts: all
+#  become: true
+#  roles:
+#   - role: commons
+
+- hosts: servidores_web
+  become: true
+  roles:
+   - role: apache2
+
+- hosts: servidores_web
+  become: true
+  roles:
+   - role: mariadb
+
+- hosts: servidores_web
+  become: true
+  roles:
+   - role: wordpress
