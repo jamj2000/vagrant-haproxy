@@ -18,9 +18,6 @@ Vagrant.configure("2") do |config|
         :libvirt__dhcp_enabled => false,
         :ip => "10.0.0.10",
         :libvirt__forward_mode => "veryisolated"
-      #backend1.vm.provision "shell",
-      #  run: "always",
-      #  inline: "sudo ip route add default via 10.0.0.100"
     end
     config.vm.define :backend2 do |backend2|
       backend2.vm.box = "debian/bullseye64"
@@ -31,10 +28,6 @@ Vagrant.configure("2") do |config|
         :libvirt__dhcp_enabled => false,
         :ip => "10.0.0.11",
         :libvirt__forward_mode => "veryisolated"
-      #backend2.vm.provision "shell",
-      #  run: "always",
-      #  inline: "sudo ip route add default via 10.0.0.100"
-      
     end
   end
   

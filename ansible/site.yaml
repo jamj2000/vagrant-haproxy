@@ -3,10 +3,10 @@
   roles:
    - role: commons
 
-#- hosts: servidor_ha
-#  become: true
-#  roles:
-#   - role: router
+- hosts: servidor_ha
+  become: true
+  roles:
+   - role: haproxy
 
 - hosts: servidores_web
   become: true
