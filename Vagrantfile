@@ -1,7 +1,7 @@
 Vagrant.configure("2") do |config|
     config.vm.define :frontend do |frontend|
         frontend.vm.box = "debian/bullseye64"
-        frontend.vm.hostname = "ha"
+        frontend.vm.hostname = "frontend"
         frontend.vm.synced_folder ".", "/vagrant", disabled: true
         frontend.vm.network :private_network,
           :libvirt__network_name => "red1",
