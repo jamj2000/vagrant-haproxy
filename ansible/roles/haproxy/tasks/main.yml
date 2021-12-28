@@ -1,6 +1,13 @@
-- name: install haproxy
+- name: install haproxy and hatop
   apt: 
     pkg:
     - haproxy
     - hatop
-    
+
+- name: append content to haproxy.cfg
+  blockinfile:
+    block: "{{ lookup('file', 'append_to_haproxy.cfg') }}"
+    path: /etc/haproxy/haproxy.cfg
+    backup: yes
+  notify:
+    restart haproxy
