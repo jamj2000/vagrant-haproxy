@@ -4,7 +4,7 @@ Ejemplo vagrant+ansible+haproxy
 
 # Descargo de responsabilidad
 
-Este repositorio contiene pruebas realizadas a modo de hobbie. Mis conocimientos de Vagrant y Ansible son prácticamente nulos.
+Este repositorio contiene pruebas realizadas a modo de hobby. Mis conocimientos de Vagrant y Ansible son prácticamente nulos.
 
 Este contenido se basa en las siguientes referencias:
 
