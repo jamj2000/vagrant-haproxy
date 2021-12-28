@@ -51,7 +51,7 @@ sudo apt install ansible
 ## Ejecución
 
 ```console
-git clone hthttps://github.com/jamj2000/vagrant_ansible_haproxy
+git clone https://github.com/jamj2000/vagrant_ansible_haproxy
 cd vagrant_ansible_haproxy
 vagrant up
 ```
