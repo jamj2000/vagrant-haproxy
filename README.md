@@ -19,11 +19,8 @@ Utilizo el proveedor **libvirt** en lugar de **virtualbox**. Al parecer el prime
 0. Instalar **qemu-kvm**, **virt-manager** y demás
 
 ```console
-sudo apt install qemu-kvm  virt-manager
+sudo apt install qemu-kvm  virt-manager  libvirt-dev
 ```
-
-NOTA: puede ser que sea necesario instalar algún paquete adicional, por ejemplo: libvirt-dev
-
 
 1. Instalar **vagrant**
    Ref: https://www.vagrantup.com/docs/installation
