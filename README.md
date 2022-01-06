@@ -1,3 +1,5 @@
+**This work is based on https://github.com/josedom24/vagrant_ansible_haproxy**
+
 # vagrant_ansible_haproxy
 Ejemplo vagrant+ansible+haproxy
 
